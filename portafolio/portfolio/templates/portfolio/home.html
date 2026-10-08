@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Perla | Portafolio</title>
+</head>
+<body>
+    <h1><span id="hello" translate="no">Hola</span>, soy Perla</h1>
+
+    <h2>Proyectos</h2>
+    {% for project in projects %}
+        <div>
+            <img src="{{ project.image.url }}" alt="{{ project.title }}" width="200">
+            <p>{{ project.title }}</p>
+        </div>
+    {% empty %}
+        <p>Aún no hay proyectos.</p>
+    {% endfor %}
+
+    {{ greetings|json_script:"greetings-data" }}
+    <script>
+        const greetings = JSON.parse(document.getElementById("greetings-data").textContent);
+        const hello = document.getElementById("hello");
+        let i = 0;
+        if (greetings.length > 1) {
+            setInterval(() => {
+                i = (i + 1) % greetings.length;
+                hello.textContent = greetings[i];
+            }, 25000);
+        }
+    </script>
+</body>
+</html>
