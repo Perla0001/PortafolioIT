@@ -1,7 +1,6 @@
 from django.contrib import admin
 from .models import Technology, Project, Certificate, ContactMessage, Greeting
 
-
 @admin.register(Project)
 class ProjectAdmin(admin.ModelAdmin):
     list_display = ("title", "is_visible", "display_order", "created_at")
