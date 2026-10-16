@@ -1,0 +1,120 @@
+* {
+    box-sizing: border-box;
+}
+
+.guion{
+  margin: 10px 10px 5px 5px;
+
+}
+
+.bloomy-img{
+  width:40p;
+  height:40px;
+  border-radius: 100px;
+}
+
+.bloomy-fairy-img{
+  width:400p;
+  height:350px;
+}
+
+.container-bloomy{
+  margin-right: 310px;
+  margin-top: -250px;
+  display: flex;
+  justify-content: right;
+  align-items: start;
+}
+
+.right-side-bloomy{
+width: 300px;
+}
+
+.hero{
+    width: 100%;
+    min-height: 100vh;
+    background-image: url("../img/fondo.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+
+    padding: 50px 6%;
+    overflow: hidden;
+}
+
+.bloomy-presentation {
+    align-self: flex-start;  /* se pega arriba, ignorando el centrado del .hero */
+    margin-top: 8vh;         /* separación desde arriba: baja el número para subir más */
+}
+
+p {
+    font-size: 16px;
+    line-height: 1.9;
+    max-width: 650px;
+    margin: 5px 15px 5px 15px;
+}
+
+p.lead {
+    font-family: 'Poppins', sans-serif;
+    color: white;
+    font-size: 16px;
+    line-height: 1.9;
+    margin: 0;
+    max-width: 600px;
+    font-size: 18px;
+}
+
+h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(38px, 4vw, 58px);
+    font-weight: 700;
+    color: #8E4567;
+    margin: 0 0 24px;
+
+}
+
+
+.proyectos {
+    padding: 4rem 6%;
+}
+
+.proyectos h2 {
+    font-family: 'Playfair Display', serif;
+    color: #8E4567;
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 2rem;
+}
+
+.project-card {
+    background: rgba(255, 255, 255, 0.75);
+    border-radius: 20px;
+    padding: 1rem;
+    text-align: center;
+}
+
+.project-card img {
+    display: block;
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+    border-radius: 14px;
+}
+
+.project-card h3 {
+    margin: 0.8rem 0 0.2rem;
+    font-family: 'Playfair Display', serif;
+    color: #8E4567;
+}
+
+

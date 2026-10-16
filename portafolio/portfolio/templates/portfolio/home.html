@@ -1,34 +1,69 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Perla | Portafolio</title>
+    <link rel="stylesheet" href="{% static 'portfolio/css/style.css' %}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
 </head>
+
 <body>
-    <h1><span id="hello" translate="no">Hola</span>, soy Perla</h1>
 
+<section  id="indice" class="guion">
+    <div class="hero-bloomy" id="bloomy">
+        <img class="bloomy-img" src="{% static 'portfolio/img/img1.png' %}" alt="Bloomy, el hada del portafolio">
+    </div>
+
+</section>
+
+
+<section id="inicio" class="hero">
+
+    <div class="bloomy-presentation">
+        <h1>Soy Perla</h1>
+        <p class="lead">
+            Mi nombre es Perla Taveras Rosario, soy estudiante de Ingeniería en Software y una apasionada de la programación,
+            el diseño y la creación de soluciones digitales.
+
+            Creo que la tecnología no solo debe ser funcional, sino también bella, intuitiva y capaz de mejorar la vida de las personas.
+            Por eso nace Bloomy Studio, un espacio donde la creatividad y la tecnología se unen para transformar ideas en experiencias
+            digitales útiles, atractivas y significativas.
+        </p>
+    </div>
+    <div class="container-bloomy">
+        <section class="right-side-bloomy">
+            <img class="bloomy-fairy-img" src="{% static 'portfolio/img/img6.png' %}" alt="Bloomy, el hada del portafolio">
+        </section>
+    </div>
+
+</section>
+
+<section id="proyectos" class="proyectos">
     <h2>Proyectos</h2>
-    {% for project in projects %}
-        <div>
-            <img src="{{ project.image.url }}" alt="{{ project.title }}" width="200">
-            <p>{{ project.title }}</p>
-        </div>
-    {% empty %}
-        <p>Aún no hay proyectos.</p>
-    {% endfor %}
+    <div class="container-proyectos">
+            {% for project in projects %}
+            <article class="project-card">
+                <img src="{{ project.image.url }}" alt="{{ project.title }}">
+                <h3>{{ project.title }}</h3>
+            </article>
+            {% empty %}
+                <p>Aún no hay proyectos.</p>
+            {% endfor %}
 
-    {{ greetings|json_script:"greetings-data" }}
-    <script>
-        const greetings = JSON.parse(document.getElementById("greetings-data").textContent);
-        const hello = document.getElementById("hello");
-        let i = 0;
-        if (greetings.length > 1) {
-            setInterval(() => {
-                i = (i + 1) % greetings.length;
-                hello.textContent = greetings[i];
-            }, 25000);
-        }
-    </script>
+    </div>
+
+
+</section>
+
+
+
+<!--
+
+-->
+
 </body>
 </html>
