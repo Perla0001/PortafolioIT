@@ -76,6 +76,21 @@
 
 </section>
 
+<section id="certificados" class="certificados">
+    <h2>Certificados</h2>
+    <div class="container-certificados">
+        {% for certificate in certificates %}
+        <article class="certificado-card">
+            <img src="{{certificate.image.url}}" alt="{{ certificate.name}}">
+            <h3>{{certificate.name}}</h3>
+        </article>
+        {% empty%}
+            <p> Aún no hay certificados</p>
+        {% endfor %}
+    </div>
+
+</section>
+
 
 
 

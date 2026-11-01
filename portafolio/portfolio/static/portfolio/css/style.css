@@ -154,7 +154,8 @@ h1 {
 }
 
 .proyectos h2,
-.lenguajes h2 {
+.lenguajes h2,
+.certificados h2{
     font-family: 'Playfair Display', serif;
     color: #8E4567;
     text-align: center;
@@ -231,9 +232,7 @@ h1 {
     padding: 2rem 1.5rem 2.5rem;
 }
 
-
 /* Parte de Lenguajes y librerías */
-
 .lenguajes {
     padding: 4rem 6%;
 }
@@ -288,4 +287,32 @@ h1 {
 .tech-item:hover .tech-icon {
     transform: translateY(-6px) scale(1.05);
     box-shadow: 0 0 20px 5px rgba(242, 160, 160, 0.7),
-                0 0 40px 12px rgba(130, 119, 182, 0.4);
+                0 0 40px 12px rgba(130, 119, 182, 0.4);}
+
+
+ /* Certificados*/
+ .container-certificados{
+    display: flex;
+    gap: 1.5rem;
+    overflow: auto;
+    padding: 1rem 0.5rem 1.2rem;
+    scroll-snap-type: x mandatory;
+ }
+
+
+.certificado-card{
+    flex: 0 0 280px;
+    scroll-snap-align: start;
+}
+
+.certificados {
+    padding: 4rem 6%;
+}
+
+.certificado-card img {
+    display: block;
+    width: 100%;
+    aspect-ratio: 16/9;
+    object-fit: cover;
+    border-radius:5px;
+}
