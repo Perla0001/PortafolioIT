@@ -9,3 +9,6 @@ def home(request):
         "greetings": list(Greeting.objects.values_list("text", flat=True)),
     }
     return render(request, "portfolio/home.html", context)
+
+def sobremi(request):
+    return render (request, "portfolio/sobremi.html")

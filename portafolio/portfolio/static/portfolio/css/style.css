@@ -2,6 +2,8 @@
     box-sizing: border-box;
 }
 
+/* Parte de Inicio */
+
 .guion{
   margin: 10px 10px 5px 5px;
 
@@ -14,13 +16,13 @@
 }
 
 .bloomy-fairy-img{
-  width:400p;
-  height:350px;
+  width:500p;
+  height:400px;
 }
 
 .container-bloomy{
-  margin-right: 310px;
-  margin-top: -250px;
+  margin-right: 320px;
+  margin-top: -90px;
   display: flex;
   justify-content: right;
   align-items: start;
@@ -46,6 +48,25 @@ width: 300px;
     padding: 50px 6%;
     overflow: hidden;
 }
+
+/* En proceso */
+.hero {
+    position: relative;
+}
+
+.hero::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 180px;
+    background: linear-gradient(to bottom, transparent, #1b1440);
+    pointer-events: none;
+}
+/* En proceso */
+
+
 
 .bloomy-presentation {
     align-self: flex-start;  /* se pega arriba, ignorando el centrado del .hero */
@@ -78,29 +99,40 @@ h1 {
 
 }
 
+/* Parte de Proyectos */
 
 .proyectos {
-    padding: 4rem 6%;
+    position: relative;
+    flex-direction: column;
+    justify-content: center;
+    align-items: stretch;
+    background-color: #1b1440;
+    background-image:
+        radial-gradient(ellipse at 15% 20%, rgba(183, 156, 255, 0.28), transparent 55%),
+        radial-gradient(ellipse at 85% 70%, rgba(255, 158, 216, 0.20), transparent 50%),
+        linear-gradient(180deg, #1b1440 0%, #2a2150 100%);
+
 }
 
 .proyectos h2 {
     font-family: 'Playfair Display', serif;
-    color: #8E4567;
     text-align: center;
     margin-bottom: 2rem;
+    color: #ffffff;
+    text-shadow: 0 2px 18px rgba(255, 158, 216, 0.55);
 }
 
-.project-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-    gap: 2rem;
+.container-proyectos {
+    display: flex;
+    gap: 1.5rem;
+    overflow-x: auto;
+    padding: 1rem 0.5rem 1.2rem;
+    scroll-snap-type: x mandatory;
 }
 
 .project-card {
-    background: rgba(255, 255, 255, 0.75);
-    border-radius: 20px;
-    padding: 1rem;
-    text-align: center;
+    flex: 0 0 220px;
+    scroll-snap-align: start;
 }
 
 .project-card img {
@@ -114,7 +146,146 @@ h1 {
 .project-card h3 {
     margin: 0.8rem 0 0.2rem;
     font-family: 'Playfair Display', serif;
+    color: #ffd6ec;
+}
+
+.proyectos p {
+    color: #ffe9f6;
+}
+
+.proyectos h2,
+.lenguajes h2 {
+    font-family: 'Playfair Display', serif;
     color: #8E4567;
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+/* En proceso*/
+
+.proyectos::before {
+    content: "";
+    position: absolute;
+    inset: -40px 0;
+    pointer-events: none;
+    background-image:
+        radial-gradient(circle, #ffe9a8 0 1.5px, rgba(255, 233, 168, 0.25) 3px, transparent 7px),
+        radial-gradient(circle, #ffbfe6 0 1.5px, rgba(255, 191, 230, 0.25) 3px, transparent 7px),
+        radial-gradient(circle, #c8b4ff 0 2px, rgba(200, 180, 255, 0.25) 4px, transparent 8px);
+    background-size: 210px 260px, 330px 290px, 470px 380px;
+    background-position: 20px 40px, 130px 170px, 260px 90px;
+    animation: flotar 14s ease-in-out infinite alternate;
+}
+
+/* Animacion*/
+
+@keyframes flotar {
+    from { transform: translateY(0);     opacity: 0.55; }
+    to   { transform: translateY(-28px); opacity: 1; }
+}
+
+.proyectos > * {
+    position: relative;
+    z-index: 1;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .proyectos::before { animation: none; }
+}
+
+/* Animacion*/
+.reveal {
+    opacity: 0;
+}
+
+.reveal.visible {
+    opacity: 1;
+    animation-name: aparecer;
+    animation-duration: 0.9s;
+    animation-timing-function: cubic-bezier(0.2, 0.7, 0.2, 1);
+    animation-delay: var(--retraso, 0s);
+    animation-fill-mode: backwards;
+}
+
+@keyframes aparecer {
+    from { opacity: 0; transform: translateY(32px); }
+    to   { opacity: 1; transform: none; }
+}
+
+/* Hover de las tarjetas */
+.project-card {
+    transition: transform 0.35s ease;
+}
+.project-card:hover {
+    transform: translateY(-6px);
+}
+.project-card img {
+    transition: box-shadow 0.35s ease;
+}
+.project-card:hover img {
+    box-shadow: 0 0 0 1px rgba(255, 158, 216, 0.6), 0 8px 24px rgba(183, 156, 255, 0.5);
+}
+
+/* Espacio para que el brillo y la elevación no se recorten */
+.container-proyectos {
+    padding: 2rem 1.5rem 2.5rem;
 }
 
 
+/* Parte de Lenguajes y librerías */
+
+.lenguajes {
+    padding: 4rem 6%;
+}
+
+.tech-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    /* para colocarlo horizontal*/
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+}
+
+.tech-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.6rem;
+}
+
+/*Circulo alrededor de la imagen*/
+.tech-icon {
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    /*
+    background: #F6E8C6;
+    border: 3px solid #B57BA7;
+    */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* tamaño de la imagen*/
+.tech-icon img {
+    width: 75%;
+    height: 75%;
+    object-fit: contain;
+}
+
+/* Color y letra del span*/
+.tech-item span {
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.95rem;
+    color: #4B5528;
+}
+ /* Sombra*/
+.tech-item:hover .tech-icon {
+    transform: translateY(-6px) scale(1.05);
+    box-shadow: 0 0 20px 5px rgba(242, 160, 160, 0.7),
+                0 0 40px 12px rgba(130, 119, 182, 0.4);

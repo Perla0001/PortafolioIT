@@ -59,11 +59,32 @@
 
 </section>
 
+<section id="lenguajes" class="lenguajes">
+    <h2>Lenguajes</h2>
+     <ul class="tech-list">
+        {% for tech in technologies %}
+            <li class="tech-item">
+                <div class="tech-icon">
+                    <img src="{{ tech.icon.url }}" alt="{{ tech.name }}">
+                </div>
+                <span>{{ tech.name }}</span>
+            </li>
+        {% empty %}
+            <li>Aún no hay tecnologías.</li>
+        {% endfor %}
+    </ul>
+
+</section>
+
+
+
+
+
+<script src="{% static 'portfolio/js/proyectos.js' %}"></script>
+</body>
+</html>
 
 
 <!--
 
 -->
-
-</body>
-</html>

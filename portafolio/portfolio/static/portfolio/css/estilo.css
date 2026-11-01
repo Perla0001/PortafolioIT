@@ -1,0 +1,48 @@
+
+/* Fondo general de la página */
+body {
+    background-color: #fff8f5;
+    margin: 0;
+    padding: 15px;
+    font-family: Georgia, serif;
+}
+
+/* Marco decorativo exterior */
+.pagina-sobremi {
+    background-color: #fffdf9;
+    border: 5px double #d8b9a5;
+    border-radius: 18px;
+    padding: 25px;
+    margin: 10px auto;
+    max-width: 1200px;
+    box-sizing: border-box;
+}
+
+/* Título */
+.pagina-sobremi h1 {
+    color: #f6b9d5;
+    text-align: center;
+    font-size: 42px;
+    margin-top: 0;
+}
+
+/* Sección de presentación */
+.presentacion {
+    background-color: #f4f0df;
+    border: 2px dashed #a9b99a;
+    border-radius: 12px;
+    padding: 20px;
+    margin-top: 25px;
+}
+
+/* Subtítulo */
+.presentacion h2 {
+    color: #82905b;
+    margin-top: 0;
+}
+
+/* Texto */
+.presentacion p {
+    color: #66594e;
+    line-height: 1.8;
+}
